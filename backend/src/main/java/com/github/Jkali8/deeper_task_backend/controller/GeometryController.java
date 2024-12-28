@@ -16,8 +16,8 @@ public class GeometryController {
     private GeometryService geometryService;
 
     @PostMapping("/intersect")
-    public String checkIntersection(@RequestBody IntersectionRequest intersectionRequest) {
-
+    public String checkIntersection(@RequestBody IntersectionRequest intersectionRequest) throws InterruptedException {
+        Thread.sleep(5000); //simulate a few requests
         boolean intersects = geometryService.checkIfInteresected(intersectionRequest.getSquare(), intersectionRequest.getLine());
         return intersects ? "The line intersects the square." : "The line does not intersect the square.";
     }
