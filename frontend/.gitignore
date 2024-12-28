@@ -21,3 +21,20 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Ignore class files
+*.class
+
+# Ignore IntelliJ IDEA files
+.idea/
+
+# Ignore build directories
+target/
+out/
+build/
+
+# Ignore temporary files
+*.log
+*.ist
+*.iml
+
