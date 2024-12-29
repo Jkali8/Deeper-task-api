@@ -4,8 +4,17 @@ import RequestCountButton from "./components/RequestCountButton";
 import UserAuth from "./components/UserAuth";
 
 function App() {
+  const appStyles = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100vh",
+    margin: 0,
+    fontFamily: "Arial, sans-serif",
+  };
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={appStyles}>
       <h1>Geometry API Frontend</h1>
       <IntersectsButton />
       <RequestCountButton />
