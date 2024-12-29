@@ -16,7 +16,6 @@ public class UserSeeder {
                 User admin = new User();
                 admin.setUsername("admin");
                 admin.setPassword("admin123");
-                admin.setRole("ADMIN");
                 userRepository.save(admin);
             }
         };
