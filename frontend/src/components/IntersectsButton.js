@@ -5,6 +5,7 @@ const IntersectsButton = () => {
   const [square, setSquare] = useState({ x: "0", y: "0", sideLength: "4" });
   const [line, setLine] = useState({ x1: "-1", y1: "-1", x2: "5", y2: "5" });
   const [result, setResult] = useState("");
+  const [testState, setTestState] = useState(false); // Initialize testState as false
 
   const validateNumber = (value) => {
     return /^-?\d+(\.\d+)?$/.test(value);
@@ -57,6 +58,7 @@ const IntersectsButton = () => {
         {
           square: parsedSquare,
           line: parsedLine,
+          testState
         }
       );
       handleResult(response.data);
@@ -82,6 +84,10 @@ const IntersectsButton = () => {
   const handleLineChange = (e) => {
     const { name, value } = e.target;
     setLine((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const toggleTestState = () => {
+    setTestState((prev) => !prev);
   };
 
   return (
@@ -184,6 +190,20 @@ const IntersectsButton = () => {
           Intersects
         </button>
         <p style={{ marginTop: "20px", fontWeight: "bold" }}>{result}</p>
+        <button
+          onClick={toggleTestState}
+          style={{
+            padding: "10px 20px",
+            margin: "20px auto",
+            display: "block",
+            textAlign: "center",
+          }}
+        >
+          Toggle Test State
+        </button>
+        <p style={{ marginTop: "10px" }}>
+          Test State: <strong>{testState ? "True" : "False"}</strong>
+        </p>
       </div>
     </div>
   );

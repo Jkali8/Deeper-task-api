@@ -13,5 +13,6 @@ public class IntersectionRequest {
 
     private Square square;
     private Line line;
+    private boolean testState;
 
 }

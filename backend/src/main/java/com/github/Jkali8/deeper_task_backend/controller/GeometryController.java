@@ -19,7 +19,10 @@ public class GeometryController {
     private GeometryService geometryService;
 
     @PostMapping("/intersect")
-    public ResponseEntity<List<double[]>> checkIntersection(@RequestBody IntersectionRequest request) {
+    public ResponseEntity<List<double[]>> checkIntersection(@RequestBody IntersectionRequest request) throws InterruptedException {
+        if(request.isTestState()) {
+            Thread.sleep(5000);
+        }
         List<double[]> intersections = geometryService.getIntersectionPoints(request.getSquare(), request.getLine());
         return ResponseEntity.ok(intersections);
     }
