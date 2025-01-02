@@ -5,6 +5,5 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17-jdk-slim
-WORKDIR /backend
 COPY --from=build /backend/target/*.jar deeper-task-backend-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+ENTRYPOINT ["java", "-jar", "/deeper-task-backend-0.0.1-SNAPSHOT.jar"]
