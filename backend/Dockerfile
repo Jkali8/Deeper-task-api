@@ -6,5 +6,5 @@ RUN mvn clean package -DskipTests
 
 FROM openjdk:17-jdk-slim
 WORKDIR /backend
-COPY --from=build /backend/target/*.jar app.jar
+COPY --from=build /backend/target/*.jar backend.jar
 ENTRYPOINT ["java", "-jar", "/app.jar"]
