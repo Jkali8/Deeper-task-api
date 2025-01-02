@@ -5,5 +5,6 @@ COPY src ./src
 RUN mvn clean package
 
 FROM openjdk:17-jdk-slim
+WORKDIR /backend
 COPY target/*.jar app.jar
 ENTRYPOINT ["java", "-jar", "/app.jar"]
