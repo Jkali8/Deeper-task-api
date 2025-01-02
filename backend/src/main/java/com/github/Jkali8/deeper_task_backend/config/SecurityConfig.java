@@ -40,7 +40,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/users").permitAll()
                         .requestMatchers("/api/geometry/**").permitAll()
-                        .requestMatchers("/swagger-ui/**,", "/swagger-ui.html", "/v3/api-docs/**").permitAll()
+                        .requestMatchers("/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**").permitAll()
                         .requestMatchers("/api/admin/**").authenticated()
                         .anyRequest().authenticated()
                 )
