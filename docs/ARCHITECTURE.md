@@ -20,11 +20,13 @@
     - To build the frontend part.
 
 ## Database (PostgreSQL)
-Used mainly because I am the most fimiliar with it
+Used mainly because I am the most fimiliar with it.
 
 ## CI/CD
 * GIT:
-    - Provides version control and tracking of chnages
+    - Manages source code for the application.
 * Docker:
     - Ensures consistency across development, and production environments by containerizing the application with all its dependencies making it run on any platform. 
 
+## Application diagram chart
+![alt text](image.png)
